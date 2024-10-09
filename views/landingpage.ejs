@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+      }
+
+      .container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+      }
+
+      header {
+        max-width: 600px;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ff5c5c;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .cta-button:hover {
+        background-color: #ff3b3b;
+      }
+
+      .features {
+        margin-top: 40px;
+      }
+
+      .features h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+
+      .feature {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 15px;
+        margin: 10px;
+        transition: transform 0.3s;
+      }
+
+      .feature:hover {
+        transform: translateY(-5px);
+      }
+
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      footer p {
+        margin: 0;
+        color: #ddd;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container">
+      <header>
+        <h1>Welcome to Our Service</h1>
+        <p>Your journey starts here. Join us for an amazing experience!</p>
+        <a href="http://localhost:2000/singup" class="cta-button">Get Started</a>
+      </header>
+
+      <section class="features">
+        <h2>Why Choose Us?</h2>
+
+        <div class="feature">
+          <h3>Feature One</h3>
+          <p>Brief description of feature one. This helps you achieve more.</p>
+        </div>
+
+        <div class="feature">
+          <h3>Feature Two</h3>
+          <p>Brief description of feature two. Experience the difference.</p>
+        </div>
+
+        <div class="feature">
+          <h3>Feature Three</h3>
+          <p>Brief description of feature three. Join our community.</p>
+        </div>
+      </section>
+
+    </div>
+    <footer>
+      <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+font-family: "Poppins", system-ui;
+/* font-weight: 100; */
+/* font-style: normal; */
+margin: 0;
+padding: 0;
+background-color: #f9f9f9;
+}
+
+header {
+    background-color: #007BFF; /* Green background */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: white;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.search-container {
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 25px;
+}
+
+.search-bar {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.search-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0056b3; /* Darker blue */
+    color: white;
+    cursor: pointer;
+}
+
+h1{
+    margin-left: 0px;
+    margin-right: 1200px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    width: 120px;
+    position: fixed;
+}
+
+.liHader:hover{
+    color: black;
+}
+
+.issueMainDiv {
+    display: flex;
+    flex-direction: row; /* Change to row layout */
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+    gap: 20px; /* Space between cards */
+    max-width: 800px; /* Set a maximum width for the main div */
+    margin: auto; /* Center the main div */
+    margin-left: 0px;
+}
+
+.issueDive {
+    background-color: #ffffff; /* White background for cards */
+    border: 1px solid #e0e0e0; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding inside the card */
+    transition: transform 0.2s; /* Smooth transform for hover effect */
+    width: 180px;
+}
+
+.issueDive:hover {
+    transform: translateY(-4px); /* Lift effect on hover */
+}
+
+.issueH4 {
+    font-size: 20px; /* Larger font size for the title */
+    color: #333; /* Darker text color for contrast */
+    margin: 0 0 10px; /* Remove default margin, add space below */
+}
+
+.issueDive b {
+    color: #555; /* Darker color for the languages label */
+    display: block; /* Make it block to separate from the title */
+    margin-bottom: 15px; /* Space below the languages */
+    font-size: 13px;
+}
+
+.issueButton {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for button */
+    font-size: 1em; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.2s, transform 0.2s; /* Smooth transitions */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.issueButton:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.issueButton:active {
+    background-color: #004085; /* Even darker blue when clicked */
+    transform: translateY(0); /* Reset lift effect */
+}
+
+.issueButton:focus {
+    outline: none; /* Remove outline */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add focus outline */
+}
+
+.profile-image {
+    width: 100px; /* Set the width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Optional: make it circular */
+    border: 2px solid #007bff; /* Optional: border around the image */
+}
+.red-btn{
+    background-color: red; /* Bootstrap primary color */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for button */
+    font-size: 1em; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.2s, transform 0.2s; /* Smooth transitions */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.red-btn:hover{
+    background-color: black; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+.setting-btn{
+    margin-left: 1200px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+b{
+    font-size: larger;
+}
+
+
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1>codeQuest</h1>
+        <nav>
+            <ul>
+                <div class="search-container">
+                    <form id="searchForm">
+                        <input type="text" class="search-bar" placeholder="Search Open Code" id="searchInput" required />
+                        <button type="submit" class="search-button">Search</button>
+                    </form>
+                </div>
+                
+                <li class="liHader"><a class="liHader" href="/api/home">Home</a></li>
+                <li class="liHader"><a class="liHader" href="/api/profile">Profile</a></li>
+                <li class="liHader"><a class="liHader" href="/openissue">Open Issue</a></li>
+                <li class="liHader"><a class="liHader" href="/api/settings">Settings</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="welcome">
+            <h2>Hello, <%= name %></h2>
+            <img src="<%= profileImage %>" alt="userProfileImage" class="profile-image">
+
+            <% if (locals.bio) { %>
+                <p><%= bio %></p>
+            <% } %>
+        </section>
+
+        <section id="content">
+            <h2>Account Setting</h2>
+
+                <section id="content">
+                    <form action="">
+                        <b>Delete All Code And Issue</b>
+                        <button class="setting-btn issueButton" type="submit">Delete</button>
+                    </form>
+                </section>
+
+                <section class="content">
+                    <form action="">
+                        <b>Account Delete</b>
+                        <button class="red-btn setting-btn" type="submit">Delete</button>
+                    </form>
+                </section>
+
+        </section>
+        
+    </main>
+
+</body>
+</html>

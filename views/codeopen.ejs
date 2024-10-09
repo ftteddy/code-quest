@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>code-<%= issuename %>-codeQuest</title>
+
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+       body {
+    font-family: "Poppins", system-ui;
+    /* font-weight: 100; */
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #007BFF; /* Green background */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+.search-container {
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 25px;
+}
+
+.search-bar {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.search-bar-comment {
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 1240px;
+    height: 80px;
+}
+
+.comment-button {
+    padding: 10px;
+    width: 80px;
+    margin-left: 7px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0056b3; /* Darker blue */
+    color: white;
+    cursor: pointer;
+
+}
+
+.search-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0056b3; /* Darker blue */
+    color: white;
+    cursor: pointer;
+}
+section {
+    background-color: white;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.section {
+    background-color: white;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column; /* Flex column layout for content inside */
+    justify-content: flex-end; /* Align content to the bottom */
+    overflow: auto;
+}
+h1{
+    margin-left: 0px;
+    margin-right: 1200px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    width: 120px;
+    position: fixed;
+}
+.liHader:hover{
+    color: black;
+}
+.profile-image {
+    width: 100px; /* Set the width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Optional: make it circular */
+    border: 2px solid #007bff; /* Optional: border around the image */
+}
+.codecopy{
+    margin: 0px;
+    background-color: gray;
+    color: whitesmoke;
+}
+
+.issueButton {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for button */
+    font-size: 1em; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.2s, transform 0.2s; /* Smooth transitions */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.issueButton:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.issueButton:active {
+    background-color: #004085; /* Even darker blue when clicked */
+    transform: translateY(0); /* Reset lift effect */
+}
+
+.issueButton:focus {
+    outline: none; /* Remove outline */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add focus outline */
+}
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+ /* Removes underline from anchor tag */
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0062cc;
+}
+
+.comments-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment-box {
+    display: flex; 
+    flex-direction: column;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.comment-box:last-child {
+    border-bottom: none; /* Remove border for the last comment */
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.commentProfileImage {
+    width: 50px; /* Set the width of the profile image */
+    height: 50px; /* Set the height of the profile image */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+.nameComment {
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 15px;
+    margin-bottom: 0px;
+    margin-top: 13px;
+    height: 0px;
+}
+
+.commentContent {
+    font-size: 14px;
+    color: #333;
+    height: 0px;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 200px;
+}
+.flex{
+    display: flex;
+}
+
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <h1>codeQuest</h1>
+        <nav>
+            <ul>
+                <div class="search-container">
+                    <form id="searchForm">
+                        <input type="text" class="search-bar" placeholder="Search Open Code" id="searchInput" required />
+                        <button type="submit" class="search-button">Search</button>
+                    </form>
+                </div>
+                
+                <li class="liHader"><a class="liHader" href="/api/home">Home</a></li>
+                <li class="liHader"><a class="liHader" href="/openissue">Open Issue</a></li>
+                <li class="liHader"><a class="liHader" href="/myissue">My Isuues</a></li>
+                <% if (issueMain == issuecodeid) { %>
+                    <li class="liHader"><a class="liHader" href="/api/delete/<%= codedelete %>">Delete Code</a></li>
+                <% } %>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <section id="welcome">
+            <h2>Hello, <%= name %></h2>
+            <img src="<%= profileImage %>" alt="userProfileImage" class="profile-image">
+    </section>
+
+    <section id="content">
+        <% if (locals.code) { %>
+            <section id="content">
+                <h2><%= issuename %></h2>
+            </section>
+
+            <section id="content">
+                <div><%= codedes %></div>
+            </section>
+
+            <section id="content">
+                <pre><%= code %></pre>
+                <!-- <button onclick="copyToClipboard('code-to-copy')" class="codecopy">Copy Code</button>  -->
+            </section>
+
+            <a class="button" href="<%= codefile %>" download >Download Code</a>
+        <% } %>
+    </section>
+
+    <section id="content">
+        <div class="search-container">
+            <form id="searchForm" method="POST" action="/api/comment/<%= codedelete %>">
+                <input name="content" type="text" class="search-bar-comment" placeholder="Comment" id="searchInput" required />
+                <button type="submit" class="comment-button">Comment</button>
+            </form>
+        </div>
+    </section>
+
+    <% if (locals.comments) { %>
+        <% comments.forEach(comment=> { %>
+            <section id="content" class="section">
+                <div class="comment-box">
+                    <div class="flex"> 
+                        <img class="commentProfileImage" src="<%= comment.issueById.profileImage %>" alt="userProfileImage" class="profile-image">
+                    <div class="nameComment"> <%= comment.issueById.fullname %></div>
+                    </div>
+                    <b class="commentContent"><%= comment.comment %></b>
+                </div>
+            </section>
+        <% }) %>
+    <% } %>
+
+</body>
+</html>

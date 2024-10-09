@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup-CodeQuest</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 270px; /* Change to 100% for consistent width */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      p {
+        text-align: center;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+
+      .custom-file-upload {
+        display: inline-block;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: 1px solid #007bff;
+        border-radius: 3px;
+        background-color: #f4f4f4;
+        color: #007bff;
+        text-align: center;
+        width: 250px;
+      }
+
+      .custom-file-upload:hover {
+        background-color: #007bff;
+        color: white;
+        border-color: #0056b3;
+      }
+
+      .error-box {
+      background-color: #ffcccc; /* Light red background */
+      color: #d8000c; /* Dark red text */
+      border: 1px solid #d8000c; /* Dark red border */
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+       }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <% if (locals.errorTag) { %>
+        <div class="error-box">
+            <p><%= errorTag %></p>
+        </div>
+      <% } %> 
+      
+      <h1>Create Your Account</h1>
+      <form id="signupForm" method="POST" action="/user/singup" enctype="multipart/form-data">
+        <div class="form-group">
+
+          <label for="profileImage">Profile Image</label>
+          <label class="custom-file-upload">
+            <input
+              type="file"
+              id="profileImage"
+              name="profileImage"
+              accept="image/*"
+            />
+            Choose File
+          </label>
+
+        </div>
+
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullname" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmpassword"
+            required
+          />
+        </div>
+
+        <button type="submit">Sign Up</button>
+        <p>
+          Already have an account?
+          <a href="http://localhost:2000/login">Log In</a>
+        </p>
+
+      </form>
+    </div>
+
+  </body>
+</html>

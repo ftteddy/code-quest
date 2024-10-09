@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Issue Submission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input, textarea, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Submit a Code Issue</h2>
+
+<form action="/api/submitissue" method="POST" enctype="multipart/form-data">
+    <label for="issueName">Code Issue Name:</label>
+    <input type="text" id="issueName" name="issueName" required>
+
+    <label for="issueName">Code Language:</label>
+    <input type="text" id="issueName" name="language" required>
+
+    <label for="issueDescription">Code Issue Description:</label>
+    <textarea id="issueDescription" name="issueDescription" rows="4" required></textarea>
+
+    <label for="code">Code Snippet:</label>
+    <textarea id="code" name="code" rows="8" required></textarea>
+
+    <label for="codeFile">Upload Code File:</label>
+    <input type="file" id="codeFile" name="codeFile" accept=".js,.py,.java,.cpp,.txt,.ejs">
+
+    <button type="submit">Submit Issue</button>
+</form>
+
+</body>
+</html>
